@@ -1,0 +1,241 @@
+@import url(reset.css);
+
+/* Geral Inicio */
+body {
+    background-color: #15172a;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:hover, 
+button:hover {
+    color: #eb4432;    
+}
+
+.button {
+    display: block;
+    text-align: center;
+    background-color: #034303;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0px;
+    width: 98%;
+    cursor: pointer;
+    color: #FFF;
+}
+
+.button-danger {
+    display: block;
+    text-align: center;
+    background-color: #8f0c0c;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0px;
+    width: 98%;
+    cursor: pointer;
+    color: #FFF;
+}
+
+h1 {
+    font-size: 4em;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+@media (max-width: 540px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+.table-main {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-main th {
+    background-color: #f9f9f9;
+    font-weight: bold;
+    padding: 8px;
+    text-align: left;
+    color: #000;
+}
+
+.table-main td {
+    padding: 8px;
+}
+
+.table-main tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+    color: #000;
+}
+
+/* Geral Fim */
+
+/* Menu Inicio */
+.container-bar {
+    position: absolute;
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 10px;
+    z-index: 300;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 24px;
+    height: 2px;
+    background-color: #eb4432;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    transform: translate(0, 1px) rotate(-45deg);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+.menu {
+    position: absolute;
+    background-color: #252a37;
+    width: max-content;
+    height: 100%;
+    z-index: 100;
+    margin-left: -1000px;
+}
+
+.menu>ul {
+    margin: 40px;
+}
+
+.menu>ul>li {
+    padding-top: 20px;    
+}
+
+.sub-menu {
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.sub-menu>li {    
+    margin-top: 15px;
+}
+/* Menu Fim */
+
+/* Páginas Inicio */
+.title-1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.card {
+    border: #fff 1px solid;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.form-container * {
+    box-sizing: border-box;
+}
+
+.flex-ul {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.flex-ul li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.flex-ul>li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.flex-ul li label,
+.flex-ul li p {
+    padding: 8px;
+    font-weight: 300;
+    letter-spacing: .09em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.flex-ul>li>label,
+.flex-ul li p {
+    flex: 1 0 120px;
+    max-width: 220px;
+}
+
+.flex-ul>li>label+* {
+    flex: 1 0 220px;    
+}
+
+.flex-ul li p {
+    margin: 0;
+}
+
+.flex-ul li input,
+.flex-ul li select,
+.flex-ul li textarea {
+    padding: 15px;
+    border: none;
+}
+
+.flex-ul li button {
+    margin-left: auto;
+    padding: 8px 16px;
+    border: none;
+    background: #333;
+    color: #f2f2f2;
+    text-transform: uppercase;
+    letter-spacing: .09em;
+    border-radius: 2px;
+    cursor: pointer;
+}
+/* Páginas Fim */

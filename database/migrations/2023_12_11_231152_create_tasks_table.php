@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('descricao');
-            $table->string('email-responsavel');
+            $table->string('email_responsavel');
             $table->unsignedBigInteger('status_id')->unsigned();
             $table->foreign('status_id')->references('id')->on('statuses');
             $table->timestamps();
