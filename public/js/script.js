@@ -25,21 +25,3 @@ function alterarBar(x) {
         document.getElementById('menu').style.marginLeft = "-1000px";
     }
 }
-
-document.getElementById('filtroStatus').addEventListener('keyup', function () {
-    const filtro = this.value.toUpperCase();
-    const linhas = document.querySelectorAll('#table-list tbody tr');
-
-    linhas.forEach(function (linha) {
-        const colunaStatus = linha.querySelector('td:nth-child(4)');
-        if (colunaStatus) {
-            const textoStatus = colunaStatus.textContent.toUpperCase();
-            if (textoStatus.indexOf(filtro) > -1) {
-                linha.style.display = '';
-            } else {
-                linha.style.display = 'none';
-            }
-        }
-    });
-});
-

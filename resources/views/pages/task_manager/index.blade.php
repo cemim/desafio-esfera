@@ -5,7 +5,7 @@
 @section('content')
     <div class="title-1">
         <h1>Lista de Tarefas</h1>
-    </div>    
+    </div>
     <ul class="flex-ul" style="margin: 30px">
         <li>
             <label for="filtroStatus">Filtrar</label>
@@ -34,11 +34,33 @@
                         <form action="{{ route('tasks.destroy', $task->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="button-danger">Excluir</button>                            
-                        </form>                        
-                    </td>                    
+                            <button type="submit" class="button-danger">Excluir</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+@endsection
+
+@section('javascript')
+    <script type="text/javascript">
+        // Filtrar Status
+        document.getElementById('filtroStatus').addEventListener('keyup', function() {
+            const filtro = this.value.toUpperCase();
+            const linhas = document.querySelectorAll('#table-list tbody tr');
+
+            linhas.forEach(function(linha) {
+                const colunaStatus = linha.querySelector('td:nth-child(4)');
+                if (colunaStatus) {
+                    const textoStatus = colunaStatus.textContent.toUpperCase();
+                    if (textoStatus.indexOf(filtro) > -1) {
+                        linha.style.display = '';
+                    } else {
+                        linha.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
 @endsection

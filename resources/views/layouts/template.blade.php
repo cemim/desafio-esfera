@@ -39,5 +39,8 @@
         @yield('content')        
     </main>
     <script src="{{ asset('js/script.js') }}"></script>
+    @hasSection ('javascript')
+        @yield('javascript')
+    @endif
 </body>
 </html>
