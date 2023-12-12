@@ -39,6 +39,22 @@
                     <textarea rows="6" name="descricao" id="descricao_in" placeholder="Descrição">{{ isset($task) ? $task->descricao : '' }}</textarea>
                 </li>
                 <li>
+                    <label for="usuarios_in">Usuários <br> <span class="obs">(ctrl para selecionar Usuários)</span></label>                    
+                    <select name="usuarios[]" id="usuarios_in" multiple>
+                        @foreach ($userList as $user)
+                            {{ $selectedUser = '' }}
+                            @if (isset($task))
+                                @foreach ($task->user as $taskUser)
+                                    @if ($user->id === $taskUser->id)
+                                        {{ $selectedUser = 'selected' }}
+                                    @endif
+                                @endforeach                                
+                            @endif
+                            <option value="{{ $user->id }}" {{ $selectedUser }}>{{ $user->name }}</option>
+                        @endforeach
+                    </select>
+                </li>
+                <li>
                     <button type="submit">Enviar</button>
                 </li>
             </ul>

@@ -10,7 +10,7 @@ class Task extends Model
     use HasFactory;
 
     function user() {
-        return $this->belongsToMany(User::class, 'task_users', 'user_id', 'task_id');
+        return $this->belongsToMany(User::class, 'task_users', 'task_id', 'user_id');
     }
 
     public function status() {

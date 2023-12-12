@@ -82,7 +82,6 @@ h2 {
     background-color: #f9f9f9;
     color: #000;
 }
-
 /* Geral Fim */
 
 /* Menu Inicio */
@@ -204,6 +203,11 @@ h2 {
     letter-spacing: .09em;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.obs {
+    font-size: 9px;
+    text-transform: lowercase;
 }
 
 .flex-ul>li>label,

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Status;
 use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
@@ -24,7 +25,8 @@ class TaskController extends Controller
     public function create()
     {
         $statusList = Status::all();
-        return view('pages.task_manager.edit', compact('statusList'));
+        $userList = User::all();
+        return view('pages.task_manager.edit', compact('statusList', 'userList'));
     }
 
     /**
@@ -38,6 +40,7 @@ class TaskController extends Controller
         $task->email_responsavel = $request->input("email_responsavel");
         $task->status_id = $request->input("status_id");        
         $task->save();
+        $task->user()->sync($request->input("usuarios"));
 
         return redirect()->route('tasks.index');
     }
@@ -57,8 +60,9 @@ class TaskController extends Controller
     {
         $task = Task::with(['status', 'user'])->find($id);
         $statusList = Status::all();
+        $userList = User::all();
 
-        return view('pages.task_manager.edit', compact('task', 'statusList'));
+        return view('pages.task_manager.edit', compact('task', 'statusList', 'userList'));
 
     }
 
@@ -73,8 +77,9 @@ class TaskController extends Controller
             $task->titulo = $request->input("titulo");
             $task->descricao = $request->input("descricao");
             $task->email_responsavel = $request->input("email_responsavel");
-            $task->status_id = $request->input("status_id");        
-            $task->save();
+            $task->status_id = $request->input("status_id");
+            $task->user()->sync($request->input("usuarios"));
+            $task->save();            
             
             return redirect()->route('tasks.index');
         }
