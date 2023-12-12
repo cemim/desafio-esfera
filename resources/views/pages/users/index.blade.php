@@ -6,12 +6,12 @@
     <div class="title-1">
         <h1>Lista de Usuários</h1>
     </div>
-    <table class="table-main" id="table-partners">
+    <table class="table-main" id="table-list">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Nome</th>
-                <th>E-mail</th>                
+                <th onclick="ordenarTabela(0)">ID</th>
+                <th onclick="ordenarTabela(1)">Nome</th>
+                <th onclick="ordenarTabela(2)">E-mail</th>                
                 <th>Ações</th>
             </tr>
         </thead>

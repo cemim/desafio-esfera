@@ -5,14 +5,20 @@
 @section('content')
     <div class="title-1">
         <h1>Lista de Tarefas</h1>
-    </div>
-    <table class="table-main" id="table-partners">
+    </div>    
+    <ul class="flex-ul" style="margin: 30px">
+        <li>
+            <label for="filtroStatus">Filtrar</label>
+            <input type="text" id="filtroStatus" placeholder="Filtrar por Status">
+        </li>
+    </ul>
+    <table class="table-main" id="table-list">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Descrição</th>
-                <th>Status</th>
+                <th onclick="ordenarTabela(0)">ID</th>
+                <th onclick="ordenarTabela(1)">Título</th>
+                <th onclick="ordenarTabela(2)">Descrição</th>
+                <th onclick="ordenarTabela(3)">Status</th>
                 <th>Ações</th>
             </tr>
         </thead>
